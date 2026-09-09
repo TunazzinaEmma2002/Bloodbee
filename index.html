@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BloodBee — Join the Hive. Save a Life.</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style/style.css">
+<script src="./script.js"></script>
+</head>
+<body>
+
+<!-- ============ INTRO LOADER ============ -->
+<div id="loader">
+  <div class="loader-bee-wrap">
+    <svg class="loader-bee" viewBox="0 0 200 200" width="180" height="180">
+      <ellipse cx="100" cy="120" rx="46" ry="36" fill="#F3A521"/>
+      <path d="M60 108 a46 20 0 0 1 80 0" fill="#241C10"/>
+      <path d="M58 132 a46 14 0 0 0 84 0" fill="#241C10"/>
+      <ellipse cx="100" cy="120" rx="46" ry="36" fill="none" stroke="#241C10" stroke-width="2"/>
+      <ellipse cx="70" cy="95" rx="20" ry="14" fill="#FFF" opacity="0.85" transform="rotate(-20 70 95)"/>
+      <ellipse cx="130" cy="95" rx="20" ry="14" fill="#FFF" opacity="0.85" transform="rotate(20 130 95)"/>
+      <circle cx="100" cy="82" r="26" fill="#F3A521"/>
+      <path d="M76 72 a26 20 0 0 1 48 0 Z" fill="#FFFFFF"/>
+      <rect x="93" y="58" width="14" height="14" fill="#D42A3D"/>
+      <rect x="88" y="63" width="24" height="4" fill="#D42A3D"/>
+      <circle cx="90" cy="86" r="3.5" fill="#241C10"/>
+      <circle cx="110" cy="86" r="3.5" fill="#241C10"/>
+      <path d="M92 96 q8 6 16 0" stroke="#241C10" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M65 145 q-14 6 -16 22" stroke="#241C10" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M13 158 q22 -18 30 4 q-16 10 -30 -4 Z" fill="#D42A3D"/>
+      <circle cx="16" cy="160" r="3" fill="#fff"/>
+    </svg>
+  </div>
+  <div class="loader-text">
+    <h2><span class="word-blood">Blood</span><span class="word-bee">Bee</span></h2>
+    <p>Buzzing your way to a life-saving match…</p>
+  </div>
+  <div class="loader-bar"><span></span></div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <nav class="nav-container">
+    <a href="#home" class="logo">
+      <i class="fas fa-tint" style="color:var(--blood)"></i>
+      <span class="word-blood">Blood</span><span class="word-bee">Bee</span>
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#donors">Find Donor</a></li>
+      <li><a href="#banks">Blood Banks</a></li>
+      <li><a href="#campaigns">Campaigns</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#location">Location</a></li>
+    </ul>
+    <div class="auth-buttons">
+      <a href="#" class="btn btn-outline" onclick="openModal('loginModal');return false;">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </a>
+      <a href="#" class="btn btn-primary" onclick="openModal('registerModal');return false;">
+        <i class="fas fa-user-plus"></i> Join the Hive
+      </a>
+      <button class="hamburger" onclick="document.getElementById('navMenu').classList.toggle('open')">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="hero honeycomb-bg">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <span class="section-eyebrow"><i class="fas fa-shield-heart"></i> Bangladesh's Trusted Donor Network</span>
+      <h1>Small Drop. Big <span class="accent">Buzz</span>.<br>Join the <span class="accent2">Hive</span>, Save a Life.</h1>
+      <p>BloodBee connects verified donors, blood banks and organizations across Bangladesh — so no request for help ever goes unanswered.</p>
+      <div class="hero-buttons">
+        <a href="#donors" class="btn btn-primary" style="padding:1.1rem 2.2rem;">
+          <i class="fas fa-search"></i> Find a Donor
+        </a>
+        <a href="#" class="btn btn-honey" style="padding:1.1rem 2.2rem;" onclick="openModal('registerModal');return false;">
+          <i class="fas fa-hand-holding-heart"></i> Become a Donor
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>12,400+</b><span>Verified Donors</span></div>
+        <div class="hero-stat"><b>340+</b><span>Blood Banks Listed</span></div>
+        <div class="hero-stat"><b>8,900+</b><span>Lives Supported</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-hex-frame">
+        <svg class="hero-bee" viewBox="0 0 200 200">
+          <ellipse cx="100" cy="120" rx="46" ry="36" fill="#FFF9EE"/>
+          <path d="M60 108 a46 20 0 0 1 80 0" fill="#241C10"/>
+          <path d="M58 132 a46 14 0 0 0 84 0" fill="#241C10"/>
+          <ellipse cx="70" cy="95" rx="22" ry="15" fill="#FFF" opacity="0.9" transform="rotate(-20 70 95)"/>
+          <ellipse cx="130" cy="95" rx="22" ry="15" fill="#FFF" opacity="0.9" transform="rotate(20 130 95)"/>
+          <circle cx="100" cy="82" r="26" fill="#FFF9EE"/>
+          <path d="M76 72 a26 20 0 0 1 48 0 Z" fill="#FFFFFF"/>
+          <rect x="93" y="58" width="14" height="14" fill="#D42A3D"/>
+          <rect x="88" y="63" width="24" height="4" fill="#D42A3D"/>
+          <circle cx="90" cy="86" r="3.5" fill="#241C10"/>
+          <circle cx="110" cy="86" r="3.5" fill="#241C10"/>
+          <path d="M92 96 q8 6 16 0" stroke="#241C10" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M60 148 q-10 10 -8 26" stroke="#241C10" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M8 178 q22 -20 30 2 q-16 12 -30 -2 Z" fill="#D42A3D"/>
+          <circle cx="11" cy="180" r="3" fill="#fff"/>
+        </svg>
+      </div>
+      <div class="hero-drop-badge"><i class="fas fa-tint" style="color:var(--blood)"></i> Verified Donors Only</div>
+      <div class="hero-donor-badge"><b>+50</b>Honey Points / Donation</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EMERGENCY BANNER ============ -->
+<div class="emergency-banner">
+  <div class="emergency-content">
+    <div class="emergency-text">
+      <i class="fas fa-triangle-exclamation"></i>
+      <div>
+        <h3>URGENT: O+ Needed Now</h3>
+        <p>Dhaka Medical College Hospital · Requested 12 mins ago</p>
+      </div>
+    </div>
+    <a href="#" class="btn btn-honey" style="padding:.85rem 1.6rem;">
+      <i class="fas fa-hand-point-right"></i> I'm Available
+    </a>
+  </div>
+</div>
+
+<!-- ============ SEARCH ============ -->
+<section class="search-section">
+  <div class="container">
+    <div class="search-card">
+      <form class="search-grid">
+        <input type="text" class="search-input" placeholder="Search by name or area">
+        <select class="search-input">
+          <option>Blood Group</option>
+          <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+          <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+        </select>
+        <select class="search-input">
+          <option>District</option>
+          <option>Dhaka</option><option>Chattogram</option><option>Sylhet</option>
+          <option>Rajshahi</option><option>Khulna</option><option>Barishal</option><option>Rangpur</option>
+        </select>
+        <input type="text" class="search-input" placeholder="Upazila / Area">
+        <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DONORS ============ -->
+<section id="donors" class="section-pad section-alt">
+  <div class="container">
+    <span class="section-eyebrow"><i class="fas fa-users"></i> The Hive</span>
+    <h2 class="section-title">Featured Verified Donors</h2>
+    <p class="section-sub">Real people, ready to help. Every donor here is phone-verified and rated by the people they've helped.</p>
+
+    <div class="donors-grid">
+      <div class="donor-card">
+        <div class="donor-header">
+          <div class="avatar-hex"><i class="fas fa-user"></i><div class="cam-tag"><i class="fas fa-camera"></i></div></div>
+          <div>
+            <h3>Rahim Khan</h3>
+            <span class="blood-group-pill">O+</span>
+          </div>
+        </div>
+        <div class="donor-body">
+          <div class="donor-location"><i class="fas fa-location-dot"></i> Mirpur, Dhaka · 2.5 km away</div>
+          <div class="stats-row">
+            <div class="stat-cell"><b>8</b><span>Donations</span></div>
+            <div class="stat-cell"><b class="honey-points">240</b><span>Honey Pts</span></div>
+            <div class="stat-cell"><b>4.8</b><span>Rating</span></div>
+          </div>
+          <div class="comments-box">
+            <div class="comment"><div class="comment-avatar">S</div><div><strong>Shamim:</strong> Punctual and so kind. Thank you!</div></div>
+            <div class="comment"><div class="comment-avatar">F</div><div><strong>Fatema:</strong> He saved my child's life.</div></div>
+            <div class="comment-input"><input type="text" placeholder="Leave a thank-you note…"><button><i class="fas fa-paper-plane"></i></button></div>
+          </div>
+          <button class="btn btn-primary btn-block"><i class="fas fa-phone"></i> Contact Donor</button>
+        </div>
+      </div>
+
+      <div class="donor-card">
+        <div class="donor-header">
+          <div class="avatar-hex"><i class="fas fa-user-nurse"></i><div class="cam-tag"><i class="fas fa-camera"></i></div></div>
+          <div>
+            <h3>Dr. Ayesha Rahman</h3>
+            <span class="blood-group-pill">B+</span>
+          </div>
+        </div>
+        <div class="donor-body">
+          <div class="donor-location"><i class="fas fa-location-dot"></i> Gulshan, Dhaka · 4.2 km away</div>
+          <div class="stats-row">
+            <div class="stat-cell"><b>15</b><span>Donations</span></div>
+            <div class="stat-cell"><b class="honey-points">450</b><span>Honey Pts</span></div>
+            <div class="stat-cell"><b>5.0</b><span>Rating</span></div>
+          </div>
+          <div class="comments-box">
+            <div class="comment"><div class="comment-avatar">R</div><div><strong>Rafiq:</strong> Very responsive, arrived early.</div></div>
+            <div class="comment-input"><input type="text" placeholder="Leave a thank-you note…"><button><i class="fas fa-paper-plane"></i></button></div>
+          </div>
+          <button class="btn btn-primary btn-block"><i class="fas fa-phone"></i> Contact Donor</button>
+        </div>
+      </div>
+
+      <div class="donor-card">
+        <div class="donor-header">
+          <div class="avatar-hex"><i class="fas fa-user-graduate"></i><div class="cam-tag"><i class="fas fa-camera"></i></div></div>
+          <div>
+            <h3>Karim Hossain</h3>
+            <span class="blood-group-pill">A-</span>
+          </div>
+        </div>
+        <div class="donor-body">
+          <div class="donor-location"><i class="fas fa-location-dot"></i> Uttara, Dhaka · 1.8 km away</div>
+          <div class="stats-row">
+            <div class="stat-cell"><b>5</b><span>Donations</span></div>
+            <div class="stat-cell"><b class="honey-points">150</b><span>Honey Pts</span></div>
+            <div class="stat-cell"><b>4.9</b><span>Rating</span></div>
+          </div>
+          <div class="comments-box">
+            <div class="comment"><div class="comment-avatar">N</div><div><strong>Nusrat:</strong> Super friendly and quick to respond.</div></div>
+            <div class="comment-input"><input type="text" placeholder="Leave a thank-you note…"><button><i class="fas fa-paper-plane"></i></button></div>
+          </div>
+          <button class="btn btn-primary btn-block"><i class="fas fa-phone"></i> Contact Donor</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAMPAIGNS ============ -->
+<section id="campaigns" class="section-pad">
+  <div class="container">
+    <span class="section-eyebrow"><i class="fas fa-bullhorn"></i> For Organizations</span>
+    <h2 class="section-title">Upcoming Donation Campaigns</h2>
+    <p class="section-sub">NGOs, hospitals and companies can list donation drives here and reach thousands of ready donors.</p>
+
+    <div class="campaigns-grid">
+      <div class="campaign-card">
+        <div class="campaign-img img-placeholder">
+          <i class="fas fa-image"></i><span>Add Campaign Banner</span><small>Recommended 800×450</small>
+          <div class="campaign-badge">Dhaka</div>
+        </div>
+        <div class="campaign-content">
+          <h3>Ramna Park Mega Camp</h3>
+          <div class="meta"><i class="fas fa-calendar"></i> 15 Feb · 9 AM–5 PM<br><i class="fas fa-building"></i> Red Crescent Society</div>
+          <button class="btn btn-honey btn-block">Register Now</button>
+        </div>
+      </div>
+      <div class="campaign-card">
+        <div class="campaign-img img-placeholder">
+          <i class="fas fa-image"></i><span>Add Campaign Banner</span><small>Recommended 800×450</small>
+          <div class="campaign-badge">Chattogram</div>
+        </div>
+        <div class="campaign-content">
+          <h3>BUET Blood Donation Drive</h3>
+          <div class="meta"><i class="fas fa-calendar"></i> 20 Feb · Campus Event<br><i class="fas fa-building"></i> Student Council</div>
+          <button class="btn btn-honey btn-block">Join Event</button>
+        </div>
+      </div>
+      <div class="campaign-card">
+        <div class="campaign-img img-placeholder">
+          <i class="fas fa-image"></i><span>Add Campaign Banner</span><small>Recommended 800×450</small>
+          <div class="campaign-badge">Sylhet</div>
+        </div>
+        <div class="campaign-content">
+          <h3>Corporate Hive Drive</h3>
+          <div class="meta"><i class="fas fa-calendar"></i> 28 Feb · Office Hours<br><i class="fas fa-building"></i> Grameenphone CSR</div>
+          <button class="btn btn-honey btn-block">Join Event</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOOD BANKS ============ -->
+<section id="banks" class="section-pad section-alt">
+  <div class="container">
+    <span class="section-eyebrow"><i class="fas fa-hospital"></i> Nationwide Coverage</span>
+    <h2 class="section-title">Blood Banks Across Bangladesh</h2>
+    <p class="section-sub">Search and locate the nearest blood bank with live availability, straight from the hive map.</p>
+
+    <div class="map-hex-wrap">
+      <div>
+        <h3>Interactive Hive Map</h3>
+        <p>340+ blood banks · real-time stock status · turn-by-turn directions to the nearest one.</p>
+        <a href="#" class="btn btn-honey"><i class="fas fa-map-location-dot"></i> Open Full Map</a>
+      </div>
+      <div class="hex-grid-deco">
+        <div class="hex-cell on"><i class="fas fa-tint"></i></div>
+        <div class="hex-cell"><i class="fas fa-hospital"></i></div>
+        <div class="hex-cell"><i class="fas fa-plus"></i></div>
+        <div class="hex-cell on"><i class="fas fa-tint"></i></div>
+        <div class="hex-cell"><i class="fas fa-hospital"></i></div>
+        <div class="hex-cell on"><i class="fas fa-tint"></i></div>
+        <div class="hex-cell"><i class="fas fa-plus"></i></div>
+        <div class="hex-cell"><i class="fas fa-hospital"></i></div>
+      </div>
+    </div>
+
+    <div class="banks-list">
+      <div class="bank-card">
+        <div class="bank-hex"><i class="fas fa-hospital"></i></div>
+        <div>
+          <h4>Dhaka Medical College</h4>
+          <p>Bakshibazar · O+, A+, B+ available</p>
+          <span class="distance-pill">2.1 km</span>
+        </div>
+      </div>
+      <div class="bank-card">
+        <div class="bank-hex"><i class="fas fa-hospital"></i></div>
+        <div>
+          <h4>Square Hospitals</h4>
+          <p>Panthapath · All groups available</p>
+          <span class="distance-pill">3.5 km</span>
+        </div>
+      </div>
+      <div class="bank-card">
+        <div class="bank-hex"><i class="fas fa-hospital"></i></div>
+        <div>
+          <h4>BSMMU Blood Bank</h4>
+          <p>Shahbag · 24/7 emergency service</p>
+          <span class="distance-pill">1.8 km</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section-pad">
+  <div class="container center">
+    <span class="section-eyebrow"><i class="fas fa-diagram-project"></i> How It Works</span>
+    <h2 class="section-title">Four Steps to Save a Life</h2>
+    <p class="section-sub center">From sign-up to reward — the whole journey happens inside the hive.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-hex"><i class="fas fa-user-plus"></i></div>
+        <h4>Create Profile</h4>
+        <p>Register with your blood group, location and contact details.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-hex"><i class="fas fa-magnifying-glass-location"></i></div>
+        <h4>Get Matched</h4>
+        <p>Needy patients or hospitals find you by group and distance.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-hex"><i class="fas fa-droplet"></i></div>
+        <h4>Donate Blood</h4>
+        <p>Visit the location and complete a safe, verified donation.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-hex"><i class="fas fa-award"></i></div>
+        <h4>Earn Honey Points</h4>
+        <p>Collect rewards, badges and public thanks on your profile.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY (image placeholders) ============ -->
+<section id="gallery" class="section-pad section-alt">
+  <div class="container">
+    <span class="section-eyebrow"><i class="fas fa-images"></i> Your Photos</span>
+    <h2 class="section-title">Moments From the Hive</h2>
+    <p class="section-sub">These slots are ready for your own donation-drive photos — just drop images in.</p>
+    <div class="gallery-grid">
+      <div class="img-placeholder"><i class="fas fa-camera"></i><span>Add Photo</span></div>
+      <div class="img-placeholder"><i class="fas fa-camera"></i><span>Add Photo</span></div>
+      <div class="img-placeholder"><i class="fas fa-camera"></i><span>Add Photo</span></div>
+      <div class="img-placeholder"><i class="fas fa-camera"></i><span>Add Photo</span></div>
+      <div class="img-placeholder"><i class="fas fa-camera"></i><span>Add Photo</span></div>
+      <div class="img-placeholder"><i class="fas fa-camera"></i><span>Add Photo</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATION ============ -->
+<section id="location" class="location-section honeycomb-bg">
+  <div class="container location-grid">
+    <div>
+      <span class="section-eyebrow"><i class="fas fa-location-dot"></i> Find Us</span>
+      <h2 class="section-title">Our Location & Contact</h2>
+      <p class="section-sub" style="color:rgba(255,247,230,0.7);">Reach out anytime — the hive is always buzzing.</p>
+      <ul class="location-list">
+        <li><div class="ic"><i class="fas fa-location-dot"></i></div><div><b>Head Office</b><span>House 12, Road 5, Habibullah Bahar Blood Donation Club, Dhaka 1209, Bangladesh</span></div></li>
+        <li><div class="ic"><i class="fas fa-phone"></i></div><div><b>Hotline</b><span>+880 1XXX-XXXXXX (24/7 Emergency)</span></div></li>
+        <li><div class="ic"><i class="fas fa-envelope"></i></div><div><b>Email</b><span>hello@bloodbee.bd</span></div></li>
+        <li><div class="ic"><i class="fas fa-clock"></i></div><div><b>Support Hours</b><span>Every day, 8:00 AM – 11:00 PM</span></div></li>
+      </ul>
+    </div>
+    <div class="location-map">
+      <i class="fas fa-map-location-dot"></i>
+      <span>Map Embed Placeholder</span>
+      <small>Drop a Google Maps embed of your office here</small>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><i class="fas fa-tint" style="color:var(--blood)"></i><span class="word-blood" style="color:var(--blood)">Blood</span><span class="word-bee" style="color:var(--honey)">Bee</span></div>
+        <p>A trusted hive connecting donors, blood banks and organizations across Bangladesh — one drop at a time.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#donors">Find Donor</a>
+        <a href="#banks">Blood Banks</a>
+        <a href="#campaigns">Campaigns</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <a href="#" onclick="openModal('registerModal');return false;">Join the Hive</a>
+        <a href="#" onclick="openModal('loginModal');return false;">Login</a>
+        <a href="#">Donor Dashboard</a>
+        <a href="#">Reward Points</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#location">Our Location</a>
+        <a href="#">About BloodBee</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 BloodBee. All rights reserved. Made with 🐝 &amp; ❤️ in Bangladesh.</div>
+  </div>
+</footer>
+
+<!-- ============ MODALS ============ -->
+<div class="modal" id="loginModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3><i class="fas fa-sign-in-alt" style="color:var(--blood)"></i> Welcome Back</h3>
+      <button class="close-btn" onclick="closeModal('loginModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <form onsubmit="return false;">
+      <div class="form-group"><label>Phone or Email</label><input type="text" placeholder="01XXXXXXXXX"></div>
+      <div class="form-group"><label>Password</label><input type="password" placeholder="••••••••"></div>
+      <button class="btn btn-primary btn-block">Login</button>
+    </form>
+    <p class="modal-switch">New to the hive? <a href="#" onclick="closeModal('loginModal');openModal('registerModal');return false;">Join now</a></p>
+  </div>
+</div>
+
+<div class="modal" id="registerModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3><i class="fas fa-user-plus" style="color:var(--honey-dark)"></i> Join the Hive</h3>
+      <button class="close-btn" onclick="closeModal('registerModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <form onsubmit="return false;">
+      <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your name"></div>
+      <div class="form-group"><label>Phone Number</label><input type="text" placeholder="01XXXXXXXXX"></div>
+      <div class="form-group"><label>Blood Group</label>
+        <select><option>Select</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select>
+      </div>
+      <div class="form-group"><label>District</label>
+        <select><option>Select</option><option>Dhaka</option><option>Chattogram</option><option>Sylhet</option><option>Rajshahi</option></select>
+      </div>
+      <button class="btn btn-honey btn-block">Create Account</button>
+    </form>
+    <p class="modal-switch">Already registered? <a href="#" onclick="closeModal('registerModal');openModal('loginModal');return false;">Login</a></p>
+  </div>
+</div>
+
+<script src="bloodbee-script.js"></script>
+</body>
+</html>
